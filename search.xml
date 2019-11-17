@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>【转载】使用 Github Pages 和 Hexo 搭建自己的独立博客</title>
+      <title>【转载】用Github和Hexo搭建博客</title>
       <link href="/20191117/reproduce/GithubPages-Hexo/"/>
       <url>/20191117/reproduce/GithubPages-Hexo/</url>
       
-        <content type="html"><![CDATA[<hr><p>按照相关作者的步骤去做，就可以成功使用Github Pages和 Hexo 搭建自己的独立博客</p><p>转载原链接：<a href="https://blog.csdn.net/qq_36759224/article/details/82121420" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/82121420</a></p><hr><p>按照相关作者的步骤去做，就可以使用脚本批处理让-Hexo 一键部署 deploy 和推送 push 到远程仓库</p><p>转载原链接： <a href="https://www.v2ex.com/t/593216" target="_blank" rel="noopener">https://www.v2ex.com/t/593216</a> </p><hr>]]></content>
+        <content type="html"><![CDATA[<hr><p>按照相关作者的步骤去做，就可以成功使用Github Pages和 Hexo 搭建自己的独立博客</p><p>转载原标题：使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</p><p>转载原链接：<a href="https://blog.csdn.net/qq_36759224/article/details/82121420" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/82121420</a></p><hr><p>按照相关作者的步骤去做，就可以使用脚本批处理让-Hexo 一键部署 deploy 和推送 push 到远程仓库</p><p>转载原标题：使用脚本批处理让-Hexo 一键部署 deploy 和推送 push 到远程仓库</p><p>转载原链接： <a href="https://www.v2ex.com/t/593216" target="_blank" rel="noopener">https://www.v2ex.com/t/593216</a> </p><hr>]]></content>
       
       
       <categories>
@@ -23,6 +23,8 @@
             <tag> hexo </tag>
             
             <tag> github </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
