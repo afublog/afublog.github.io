@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | AfuBlog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | AfuBlog">
+  <title>5种设置IE代理的快捷方式 | AfuBlog</title>
+  <meta name="keywords" content=" 效率 , 工具 , AHK , 代理 ">
+  <meta name="description" content="5种设置IE代理的快捷方式 | AfuBlog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于AfuBlogAfuBlog 是 阿福 的个人站。 到目前为止已经写了篇文章， 共字。 本站访问人数：人次 ， 访问量：次">
 <meta property="og:type" content="website">
@@ -287,24 +287,44 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-efficiency/5种设置IE代理的快捷方式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">5种设置IE代理的快捷方式</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="效率">效率</a>/
+            
+                <a href="javascript:" data-rel="原创">原创</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">效率</a>
+            
+            <a href="javascript:" class="color3">工具</a>
+            
+            <a href="javascript:" class="color4">AHK</a>
+            
+            <a href="javascript:" class="color3">代理</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-18 00:19:45'>2019-10-17 01:09</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-17 18:07:00'>2019-11-17 17:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:36</span>
+        <span>字数:513</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -323,7 +343,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于AfuBlog"><span class="toc-text">关于AfuBlog</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -339,9 +359,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于AfuBlog"><a href="#关于AfuBlog" class="headerlink" title="关于AfuBlog"></a>关于AfuBlog</h2><p><strong>AfuBlog</strong> 是 阿福 的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+        <p>由于工作原因经常切换IE代理。<br>总结几种设置代理方法：</p>
+<hr>
+<p>方法一，Internet选项设置</p>
+<ul>
+<li>打开IE浏览器-设置-Internet选项-链接-局域网设置-代理服务器</li>
+<li>经常使用，也可以桌面新建快捷方式，链接为C:\Windows\System32\inetcpl.cpl</li>
+</ul>
+<hr>
+<p>方法二，使用代理工具设置</p>
+<ul>
+<li>以EasyProxy工具举例子。代理更新设置-代理服务器-右键新增常用代理IP，在代理地址处，右键设置或取消。</li>
+<li>同类软件特别多，自行百度即可。如花刺代理验证ProxyThorn。</li>
+</ul>
+<hr>
+<p>方法三，利用批处理脚本</p>
+<ul>
+<li>新建几个文本后缀为.bat对应不同的代理即可。IP留空为不使用代理。</li>
+<li>添加批处理脚本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 开始添加IE代理</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyEnable /t REG_DWORD /d 1 /f</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyServer /d <span class="string">"10.10.10.10:1010"</span> /f</span><br><span class="line"><span class="built_in">echo</span> 添加IE代理完成,按任意键关闭。</span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除批处理脚本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 开始删除IE代理</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyEnable /t REG_DWORD /d 0 /f</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyServer /d <span class="string">""</span> /f</span><br><span class="line"><span class="built_in">echo</span> 删除IE代理完成,按任意键关闭。</span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>方法四，利用注册表导出文件</p>
+<ul>
+<li>新建几个文本后缀为.reg对应不同的代理即可。IP留空为不使用代理。</li>
+<li>添加注册表</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</span>]</span><br><span class="line"><span class="string">"ProxyEnable"</span>=dword:<span class="number">00000001</span></span><br><span class="line"><span class="string">"ProxyServer"</span>=<span class="string">"10.10.10.10:1010"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除注册表</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</span>]</span><br><span class="line"><span class="string">"ProxyEnable"</span>=dword:<span class="number">00000000</span></span><br><span class="line"><span class="string">"ProxyServer"</span>=<span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>方法五，利用快捷键工具AHK</p>
+<ul>
+<li>快捷键工具很多，AHK只是举例子。</li>
+<li>添加注册表</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:*<span class="selector-pseudo">:111</span>::</span><br><span class="line"><span class="selector-tag">RegWrite</span>, <span class="selector-tag">REG_DWORD</span>, <span class="selector-tag">HKEY_CURRENT_USER</span>, <span class="selector-tag">Software</span>\<span class="selector-tag">Microsoft</span>\<span class="selector-tag">Windows</span>\<span class="selector-tag">CurrentVersion</span>\<span class="selector-tag">Internet</span> <span class="selector-tag">Settings</span>, <span class="selector-tag">ProxyEnable</span>, 1</span><br><span class="line"><span class="selector-tag">RegWrite</span>, <span class="selector-tag">REG_SZ</span>, <span class="selector-tag">HKEY_CURRENT_USER</span>, <span class="selector-tag">Software</span>\<span class="selector-tag">Microsoft</span>\<span class="selector-tag">Windows</span>\<span class="selector-tag">CurrentVersion</span>\<span class="selector-tag">Internet</span> <span class="selector-tag">Settings</span>, <span class="selector-tag">ProxyServer</span>, 10<span class="selector-class">.10</span><span class="selector-class">.10</span><span class="selector-class">.10</span><span class="selector-pseudo">:1010</span></span><br><span class="line"><span class="selector-tag">return</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除注册表</li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:*:<span class="number">222</span>::</span><br><span class="line">RegWrite, REG_DWORD, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Internet Settings, ProxyEnable, <span class="number">0</span></span><br><span class="line">RegWrite, REG_SZ, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Internet Settings, ProxyServer, </span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>备注：</p>
+<ul>
+<li>各种方法，最终目的都是为了使用方便，切莫舍本逐末，忘记本心。</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 keithlevin@163.com </span>
@@ -349,6 +423,18 @@
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>5种设置IE代理的快捷方式</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">513</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="阿福">阿福</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-17, 17:56:49</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-17, 18:07:00</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/20191117/efficiency/5种设置IE代理的快捷方式/" title="5种设置IE代理的快捷方式">http://afublog.cm/20191117/efficiency/5种设置IE代理的快捷方式/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

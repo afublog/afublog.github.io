@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>about | AfuBlog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="about | AfuBlog">
+  <title>替换默认资源管理器为Total Commander | AfuBlog</title>
+  <meta name="keywords" content=" 效率 , 工具 , TC ">
+  <meta name="description" content="替换默认资源管理器为Total Commander | AfuBlog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于AfuBlogAfuBlog 是 阿福 的个人站。 到目前为止已经写了篇文章， 共字。 本站访问人数：人次 ， 访问量：次">
 <meta property="og:type" content="website">
@@ -287,24 +287,40 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-efficiency/替换默认资源管理器为Total Commander" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">替换默认资源管理器为Total Commander</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="效率">效率</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">效率</a>
+            
+            <a href="javascript:" class="color3">工具</a>
+            
+            <a href="javascript:" class="color3">TC</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-18 00:19:45'>2019-10-17 01:09</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-17 18:07:30'>2019-11-17 18:02</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:36</span>
+        <span>字数:210</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -323,7 +339,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于AfuBlog"><span class="toc-text">关于AfuBlog</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -339,9 +355,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="关于AfuBlog"><a href="#关于AfuBlog" class="headerlink" title="关于AfuBlog"></a>关于AfuBlog</h2><p><strong>AfuBlog</strong> 是 阿福 的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+        <p>使用Total Commander的一些心得<br>替换默认资源管理器为Total Commander</p>
+<hr>
+<p>方法一，百度一下，大家的办法有很多</p>
+<hr>
+<p>方法二，利用注册表(我觉得最简单的)</p>
+<ul>
+<li>新建两个文本后缀为.reg的文件。双击执行就可以了。</li>
+<li>添加注册表</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CLASSES_ROOT\Directory\Shell</span>]</span><br><span class="line">@=<span class="string">"TC"</span></span><br><span class="line">[<span class="meta">HKEY_CLASSES_ROOT\Directory\Shell\TC\command</span>]</span><br><span class="line">@=<span class="string">"\"D:\your-filepath\TC\Totalcmd64.exe\" \"/O\" \"/T\" \"/L=%1\""</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>恢复注册表</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Windows</span> <span class="selector-tag">Registry</span> <span class="selector-tag">Editor</span> <span class="selector-tag">Version</span> 5<span class="selector-class">.00</span></span><br><span class="line"><span class="selector-attr">[HKEY_CLASSES_ROOT\Directory\Shell]</span></span><br><span class="line">@="<span class="keyword">none</span>"</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>备注：</p>
+<ul>
+<li>目录中的your-filepath为TC安装路径，需要自行修改。</li>
+<li>添加”/O” “/T”是为了每次打开的文件夹在新的标签，如果不需要可以去掉。</li>
+<li>/L代表左侧面板，如果需要在右侧面板打开则/R。</li>
+<li>各种方法，最终目的都是为了使用方便，切莫舍本逐末，忘记本心。</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 keithlevin@163.com </span>
@@ -349,6 +386,18 @@
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>替换默认资源管理器为Total Commander</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">210</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="阿福">阿福</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-17, 18:02:15</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-17, 18:07:30</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/20191117/efficiency/替换默认资源管理器为Total Commander/" title="替换默认资源管理器为Total Commander">http://afublog.cm/20191117/efficiency/替换默认资源管理器为Total Commander/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
