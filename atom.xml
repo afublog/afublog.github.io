@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="https://www.w3.org/2005/Atom">
+  <title>AfuBlog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://afublog.cm/"/>
+  <updated>2019-11-17T10:07:30.904Z</updated>
+  <id>http://afublog.cm/</id>
+  
+  <author>
+    <name>阿福</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>替换默认资源管理器为Total Commander</title>
+    <link href="http://afublog.cm/20191117/efficiency/%E6%9B%BF%E6%8D%A2%E9%BB%98%E8%AE%A4%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%BATotal%20Commander/"/>
+    <id>http://afublog.cm/20191117/efficiency/%E6%9B%BF%E6%8D%A2%E9%BB%98%E8%AE%A4%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%BATotal%20Commander/</id>
+    <published>2019-11-17T10:02:15.191Z</published>
+    <updated>2019-11-17T10:07:30.904Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用Total Commander的一些心得<br>替换默认资源管理器为Total Commander</p><hr><p>方法一，百度一下，大家的办法有很多</p><hr><p>方法二，利用注册表(我觉得最简单的)</p><ul><li>新建两个文本后缀为.reg的文件。双击执行就可以了。</li><li>添加注册表</li></ul><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CLASSES_ROOT\Directory\Shell</span>]</span><br><span class="line">@=<span class="string">"TC"</span></span><br><span class="line">[<span class="meta">HKEY_CLASSES_ROOT\Directory\Shell\TC\command</span>]</span><br><span class="line">@=<span class="string">"\"D:\your-filepath\TC\Totalcmd64.exe\" \"/O\" \"/T\" \"/L=%1\""</span></span><br></pre></td></tr></table></figure><ul><li>恢复注册表</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Windows</span> <span class="selector-tag">Registry</span> <span class="selector-tag">Editor</span> <span class="selector-tag">Version</span> 5<span class="selector-class">.00</span></span><br><span class="line"><span class="selector-attr">[HKEY_CLASSES_ROOT\Directory\Shell]</span></span><br><span class="line">@="<span class="keyword">none</span>"</span><br></pre></td></tr></table></figure><hr><p>备注：</p><ul><li>目录中的your-filepath为TC安装路径，需要自行修改。</li><li>添加”/O” “/T”是为了每次打开的文件夹在新的标签，如果不需要可以去掉。</li><li>/L代表左侧面板，如果需要在右侧面板打开则/R。</li><li>各种方法，最终目的都是为了使用方便，切莫舍本逐末，忘记本心。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用Total Commander的一些心得&lt;br&gt;替换默认资源管理器为Total Commander&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;方法一，百度一下，大家的办法有很多&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;方法二，利用注册表(我觉得最简单的)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新建两个文本后缀为.r
+      
+    
+    </summary>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/categories/%E6%95%88%E7%8E%87/"/>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="工具" scheme="http://afublog.cm/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="TC" scheme="http://afublog.cm/tags/TC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除此电脑文件夹的方法</title>
+    <link href="http://afublog.cm/20191117/efficiency/%E5%88%A0%E9%99%A4%E6%AD%A4%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://afublog.cm/20191117/efficiency/%E5%88%A0%E9%99%A4%E6%AD%A4%E7%94%B5%E8%84%91%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2019-11-17T10:00:41.379Z</published>
+    <updated>2019-11-17T10:07:38.410Z</updated>
+    
+    <content type="html"><![CDATA[<p>我的电脑(此电脑)里面有很多文件夹，通过注册表可以删除不想用的文件夹</p><hr><p>1.建议操作前导出注册表文件，方法为导出注册表中对应的项</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\<span class="keyword">NameSpace</span></span><br></pre></td></tr></table></figure><hr><p>2.先解释一下不同文件夹对应的项</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">下载</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;088e3905-0323-4b02-9826-5d99428e115f&#125;</span>]</span><br><span class="line"><span class="number">3</span>D对象</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;0DB7E03F-FC29-4DC6-9020-FF41B59E513A&#125;</span>]</span><br><span class="line">图片</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;24ad3ad4-a569-4530-98e1-ab02f9417aa8&#125;</span>]</span><br><span class="line">音乐</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;3dfdf296-dbec-4fb4-81d1-6a3438bcf4de&#125;</span>]</span><br><span class="line">桌面</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;B4BFCC3A-DB2C-424C-B029-7FE99A87C641&#125;</span>]</span><br><span class="line">文档</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;d3162b92-9365-467a-956b-92703aca08af&#125;</span>]</span><br><span class="line">视频</span><br><span class="line">[<span class="meta">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a&#125;</span>]</span><br></pre></td></tr></table></figure><hr><p>3.通过注册表修改文件夹</p><ul><li>新建一个文本后缀为.reg，有选择的填写如下内容。</li><li>删除注册表</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Windows</span> <span class="selector-tag">Registry</span> <span class="selector-tag">Editor</span> <span class="selector-tag">Version</span> 5<span class="selector-class">.00</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;088e3905-0323-4b02-9826-5d99428e115f&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;0DB7E03F-FC29-4DC6-9020-FF41B59E513A&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;24ad3ad4-a569-4530-98e1-ab02f9417aa8&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;3dfdf296-dbec-4fb4-81d1-6a3438bcf4de&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;B4BFCC3A-DB2C-424C-B029-7FE99A87C641&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;d3162b92-9365-467a-956b-92703aca08af&#125;]</span></span><br><span class="line"><span class="selector-attr">[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a&#125;]</span></span><br></pre></td></tr></table></figure><ul><li>添加注册表</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Windows</span> <span class="selector-tag">Registry</span> <span class="selector-tag">Editor</span> <span class="selector-tag">Version</span> 5<span class="selector-class">.00</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;088e3905-0323-4b02-9826-5d99428e115f&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;0DB7E03F-FC29-4DC6-9020-FF41B59E513A&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;24ad3ad4-a569-4530-98e1-ab02f9417aa8&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;3dfdf296-dbec-4fb4-81d1-6a3438bcf4de&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;B4BFCC3A-DB2C-424C-B029-7FE99A87C641&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;d3162b92-9365-467a-956b-92703aca08af&#125;]</span></span><br><span class="line"><span class="selector-attr">[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\&#123;f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a&#125;]</span></span><br></pre></td></tr></table></figure><hr><p>备注：</p><ul><li>各种折腾，最终目的都是为了使用方便，切莫舍本逐末，忘记本心。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我的电脑(此电脑)里面有很多文件夹，通过注册表可以删除不想用的文件夹&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;1.建议操作前导出注册表文件，方法为导出注册表中对应的项&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutte
+      
+    
+    </summary>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/categories/%E6%95%88%E7%8E%87/"/>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="windows" scheme="http://afublog.cm/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5种设置IE代理的快捷方式</title>
+    <link href="http://afublog.cm/20191117/efficiency/5%E7%A7%8D%E8%AE%BE%E7%BD%AEIE%E4%BB%A3%E7%90%86%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
+    <id>http://afublog.cm/20191117/efficiency/5%E7%A7%8D%E8%AE%BE%E7%BD%AEIE%E4%BB%A3%E7%90%86%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/</id>
+    <published>2019-11-17T09:56:49.766Z</published>
+    <updated>2019-11-17T10:07:00.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于工作原因经常切换IE代理。<br>总结几种设置代理方法：</p><hr><p>方法一，Internet选项设置</p><ul><li>打开IE浏览器-设置-Internet选项-链接-局域网设置-代理服务器</li><li>经常使用，也可以桌面新建快捷方式，链接为C:\Windows\System32\inetcpl.cpl</li></ul><hr><p>方法二，使用代理工具设置</p><ul><li>以EasyProxy工具举例子。代理更新设置-代理服务器-右键新增常用代理IP，在代理地址处，右键设置或取消。</li><li>同类软件特别多，自行百度即可。如花刺代理验证ProxyThorn。</li></ul><hr><p>方法三，利用批处理脚本</p><ul><li>新建几个文本后缀为.bat对应不同的代理即可。IP留空为不使用代理。</li><li>添加批处理脚本</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 开始添加IE代理</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyEnable /t REG_DWORD /d 1 /f</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyServer /d <span class="string">"10.10.10.10:1010"</span> /f</span><br><span class="line"><span class="built_in">echo</span> 添加IE代理完成,按任意键关闭。</span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure><ul><li>删除批处理脚本</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 开始删除IE代理</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyEnable /t REG_DWORD /d 0 /f</span><br><span class="line">reg add <span class="string">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"</span> /v ProxyServer /d <span class="string">""</span> /f</span><br><span class="line"><span class="built_in">echo</span> 删除IE代理完成,按任意键关闭。</span><br><span class="line">pause&gt;nul</span><br></pre></td></tr></table></figure><hr><p>方法四，利用注册表导出文件</p><ul><li>新建几个文本后缀为.reg对应不同的代理即可。IP留空为不使用代理。</li><li>添加注册表</li></ul><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</span>]</span><br><span class="line"><span class="string">"ProxyEnable"</span>=dword:<span class="number">00000001</span></span><br><span class="line"><span class="string">"ProxyServer"</span>=<span class="string">"10.10.10.10:1010"</span></span><br></pre></td></tr></table></figure><ul><li>删除注册表</li></ul><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows Registry Editor Version <span class="number">5.00</span></span><br><span class="line">[<span class="meta">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</span>]</span><br><span class="line"><span class="string">"ProxyEnable"</span>=dword:<span class="number">00000000</span></span><br><span class="line"><span class="string">"ProxyServer"</span>=<span class="string">""</span></span><br></pre></td></tr></table></figure><hr><p>方法五，利用快捷键工具AHK</p><ul><li>快捷键工具很多，AHK只是举例子。</li><li>添加注册表</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:*<span class="selector-pseudo">:111</span>::</span><br><span class="line"><span class="selector-tag">RegWrite</span>, <span class="selector-tag">REG_DWORD</span>, <span class="selector-tag">HKEY_CURRENT_USER</span>, <span class="selector-tag">Software</span>\<span class="selector-tag">Microsoft</span>\<span class="selector-tag">Windows</span>\<span class="selector-tag">CurrentVersion</span>\<span class="selector-tag">Internet</span> <span class="selector-tag">Settings</span>, <span class="selector-tag">ProxyEnable</span>, 1</span><br><span class="line"><span class="selector-tag">RegWrite</span>, <span class="selector-tag">REG_SZ</span>, <span class="selector-tag">HKEY_CURRENT_USER</span>, <span class="selector-tag">Software</span>\<span class="selector-tag">Microsoft</span>\<span class="selector-tag">Windows</span>\<span class="selector-tag">CurrentVersion</span>\<span class="selector-tag">Internet</span> <span class="selector-tag">Settings</span>, <span class="selector-tag">ProxyServer</span>, 10<span class="selector-class">.10</span><span class="selector-class">.10</span><span class="selector-class">.10</span><span class="selector-pseudo">:1010</span></span><br><span class="line"><span class="selector-tag">return</span></span><br></pre></td></tr></table></figure><ul><li>删除注册表</li></ul><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:*:<span class="number">222</span>::</span><br><span class="line">RegWrite, REG_DWORD, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Internet Settings, ProxyEnable, <span class="number">0</span></span><br><span class="line">RegWrite, REG_SZ, HKEY_CURRENT_USER, Software\Microsoft\Windows\CurrentVersion\Internet Settings, ProxyServer, </span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure><hr><p>备注：</p><ul><li>各种方法，最终目的都是为了使用方便，切莫舍本逐末，忘记本心。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;由于工作原因经常切换IE代理。&lt;br&gt;总结几种设置代理方法：&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;方法一，Internet选项设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开IE浏览器-设置-Internet选项-链接-局域网设置-代理服务器&lt;/li&gt;
+&lt;li&gt;经常使用，也可以桌面新建快捷方式，链
+      
+    
+    </summary>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/categories/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="原创" scheme="http://afublog.cm/categories/%E6%95%88%E7%8E%87/%E5%8E%9F%E5%88%9B/"/>
+    
+    
+      <category term="效率" scheme="http://afublog.cm/tags/%E6%95%88%E7%8E%87/"/>
+    
+      <category term="工具" scheme="http://afublog.cm/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="AHK" scheme="http://afublog.cm/tags/AHK/"/>
+    
+      <category term="代理" scheme="http://afublog.cm/tags/%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20191117-博客框架弄好了</title>
+    <link href="http://afublog.cm/20191117/diary/20191117-%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E5%BC%84%E5%A5%BD%E4%BA%86/"/>
+    <id>http://afublog.cm/20191117/diary/20191117-%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E5%BC%84%E5%A5%BD%E4%BA%86/</id>
+    <published>2019-11-17T09:52:46.609Z</published>
+    <updated>2019-11-17T09:56:45.823Z</updated>
+    
+    <content type="html"><![CDATA[<p>陆陆续续的弄，目前博客架子搭建起来了。</p><p>站在前辈的肩膀上，做什么都很方便。</p><p>博客符合自己的需求，接下来就是添枝加叶。</p><hr><p>勿忘初心，工具是为人服务的，切莫舍本逐末。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;陆陆续续的弄，目前博客架子搭建起来了。&lt;/p&gt;
+&lt;p&gt;站在前辈的肩膀上，做什么都很方便。&lt;/p&gt;
+&lt;p&gt;博客符合自己的需求，接下来就是添枝加叶。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;勿忘初心，工具是为人服务的，切莫舍本逐末。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://afublog.cm/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="http://afublog.cm/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转载】用Github和Hexo搭建博客</title>
+    <link href="http://afublog.cm/20191117/reproduce/GithubPages-Hexo/"/>
+    <id>http://afublog.cm/20191117/reproduce/GithubPages-Hexo/</id>
+    <published>2019-11-16T17:06:09.425Z</published>
+    <updated>2019-11-17T09:47:08.312Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>按照相关作者的步骤去做，就可以成功使用Github Pages和 Hexo 搭建自己的独立博客</p><p>转载原标题：使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</p><p>转载原链接：<a href="https://blog.csdn.net/qq_36759224/article/details/82121420" target="_blank" rel="noopener">https://blog.csdn.net/qq_36759224/article/details/82121420</a></p><hr><p>按照相关作者的步骤去做，就可以使用脚本批处理让-Hexo 一键部署 deploy 和推送 push 到远程仓库</p><p>转载原标题：使用脚本批处理让-Hexo 一键部署 deploy 和推送 push 到远程仓库</p><p>转载原链接： <a href="https://www.v2ex.com/t/593216" target="_blank" rel="noopener">https://www.v2ex.com/t/593216</a> </p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;按照相关作者的步骤去做，就可以成功使用Github Pages和 Hexo 搭建自己的独立博客&lt;/p&gt;
+&lt;p&gt;转载原标题：使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】&lt;/p&gt;
+&lt;p&gt;转载原链接：&lt;a href=&quot;https
+      
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="http://afublog.cm/categories/%E8%BD%AC%E8%BD%BD/"/>
+    
+    
+      <category term="hexo" scheme="http://afublog.cm/tags/hexo/"/>
+    
+      <category term="github" scheme="http://afublog.cm/tags/github/"/>
+    
+      <category term="blog" scheme="http://afublog.cm/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://afublog.cm/20191117/hello-world/"/>
+    <id>http://afublog.cm/20191117/hello-world/</id>
+    <published>2019-11-16T16:34:06.274Z</published>
+    <updated>2019-11-17T09:12:48.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
